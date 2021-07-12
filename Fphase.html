@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+		<meta charset= "utf-8">
+		<title> Control </title>	
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="sliders.js"></script>
+	</head>
+
+ 
+	<body>
+	
+	
+	<form name = "formControl" action="sphase.php" method="post">
+
+<div style="text-align:center;">
+  
+
+<label class="slidecontainer"> <p>  <span id = "p1"> 50</span> :محرك1 </p> 
+  <input type="range" min="1" max="100" value="50" class="slider" id="slid1" name="n11" onchange="myFunction()" >
+</lable>
+
+<div class="slidecontainer"> <p> <span id = "p2"  > 50 </span> : محرك 2</p>
+  <input type="range" min="1" max="100" value="50" class="slider" id="slid2"  name="n22" onchange="myFunction()">
+</div>
+
+
+<label class="slidecontainer"> <p> <span id = "p3"  >50 </span> : محرك 3 </p>
+  <input type="range" min="1" max="100" value="50" class="slider" id="slid3" name="n3" onchange="myFunction()">
+</label>
+
+<label class="slidecontainer"> <p> <span id = "p4"  > 50 </span>: محرك 4  </p>
+  <input type="range" min="1" max="100" value="50" class="slider" id="slid4" name="n4" onchange="myFunction()">
+</label>
+
+<label class="slidecontainer"> <p> <span id = "p5"  > 50 </span> :محرك 5  </p>
+  <input type="range" min="1" max="100" value="50" class="slider" id="slid5"  name="n5" onchange="myFunction()">
+</label>
+
+<label class="slidecontainer"> <p> <span id = "p6"  > 50 </span>: محرك 6 </p>
+  <input type="range" min="1" max="100" value="50" class="slider" id="slid6"  name="n6" onchange="myFunction()">
+</label>
+  
+  
+</div>
+
+<div style="text-align:center;padding:10px;margin-top:7px;">
+<button type="button"> حفظ </button>
+<button type="submit">تشغيل</button>
+</div>
+
+
+</form>
+
+
+
+
+<form action="thirdphase.php" method="post">
+
+
+
+
+<section style="text-align:center; padding-top:100px; padding-bottom:30px;"> 
+
+<div>
+<input  style="width:150px; padding:7px; margin: 4px;" name="Button1" type="submit" value="FORWARD" > 
+</div>
+
+
+<div>
+<input style="width:90px; padding:7px; margin: 4px;"  name="Button1" type="submit" value="LEFT"> 
+<input style="width:90px; padding:7px; margin: 4px;"  name="Button1" type="submit" value="STOP" > 
+<input style="width:90px; padding:7px; margin: 4px;"  name="Button1" type="submit"  value="RIGHT"> 
+</div>
+
+
+<div>
+<input style="width:150px; padding:7px; margin: 4px;" name="Button1" type="submit"  value="BACKWARD"> 
+</div>
+
+
+</section>
+
+</form>
+
+
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "0aa2e822-fbc4-457a-a7fd-6e06a0d4a0b3", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "71beaeb8-9485-40ac-9b7b-bb46721e8ec5", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+
+
+
+</body>
+</html>

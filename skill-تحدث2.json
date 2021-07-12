@@ -1,0 +1,643 @@
+{
+  "intents": [
+    {
+      "intent": "التسجيل",
+      "examples": [
+        {
+          "text": "طريقة الانضمام ؟"
+        },
+        {
+          "text": "طريقة التسجيل ؟"
+        },
+        {
+          "text": "كيف اسجل ؟"
+        },
+        {
+          "text": "ممكن رابط التسجيل"
+        },
+        {
+          "text": "وين اسجل"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "السلام",
+      "examples": [
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "السلام عليكم ورحمه الله وبركاته"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "الشكر",
+      "examples": [
+        {
+          "text": "ثانكس"
+        },
+        {
+          "text": "جزاك الله خير"
+        },
+        {
+          "text": "شكرا"
+        },
+        {
+          "text": "ما قصرت"
+        },
+        {
+          "text": "مشكور"
+        },
+        {
+          "text": "مشكوره"
+        },
+        {
+          "text": "يعطيك العافيه"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "المدة",
+      "examples": [
+        {
+          "text": "كم اسبوع التدريب ؟"
+        },
+        {
+          "text": "كم ساعه التدريب ؟"
+        },
+        {
+          "text": "كم فترة التدريب؟"
+        },
+        {
+          "text": "كم مدة التدريب"
+        },
+        {
+          "text": "كم مده التدريب"
+        },
+        {
+          "text": "مدة كم ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "تدريب",
+      "examples": [
+        {
+          "text": "عندكم تدريب ؟"
+        },
+        {
+          "text": "فيه تدريب ؟"
+        },
+        {
+          "text": "فيه تدريب تعاوني ؟"
+        },
+        {
+          "text": "فيه تدريب جامعي ؟"
+        },
+        {
+          "text": "فيه تدريب طلاب؟"
+        },
+        {
+          "text": "هل يوجد تدريب ؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "اهلا"
+        },
+        {
+          "text": "اهلين"
+        },
+        {
+          "text": "سلام"
+        },
+        {
+          "text": "مرحبا"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هلا والله"
+        },
+        {
+          "text": "هلو"
+        },
+        {
+          "text": "هههلا"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "مكانالتدريب",
+      "examples": [
+        {
+          "text": "اون لاين"
+        },
+        {
+          "text": "اونلاين"
+        },
+        {
+          "text": "حضوري"
+        },
+        {
+          "text": "عن بعد"
+        },
+        {
+          "text": "في المركز"
+        },
+        {
+          "text": "في المقر"
+        },
+        {
+          "text": "وين اتدرب ؟"
+        },
+        {
+          "text": "وين راح يكون التدريب"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "يوميا",
+      "examples": [
+        {
+          "text": "التدريب كل يوم ؟"
+        },
+        {
+          "text": "فيه تدريب بالويكند ؟"
+        },
+        {
+          "text": "فيه تدريب بنهاية الاسبوع ؟"
+        },
+        {
+          "text": "فيه تدريب يوم الجمعه والسبت؟"
+        },
+        {
+          "text": "فيه تدريب يوم الجمعه والسبت بعد؟"
+        },
+        {
+          "text": "هل التدريب طوال الاسبوع"
+        },
+        {
+          "text": "هل التدريب يومي ؟"
+        },
+        {
+          "text": "هل التدريب يوميا ؟"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "المدة",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مدة التدريب شهرين "
+              },
+              {
+                "text": "مدة التدريب 8 اسابيع"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#المدة",
+      "dialog_node": "node_1_1625684754482",
+      "previous_sibling": "node_6_1625685120758"
+    },
+    {
+      "type": "standard",
+      "title": "تدريب ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "موجود "
+              },
+              {
+                "text": "نعم لدينا تدريب "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#تدريب",
+      "dialog_node": "node_2_1625684511065",
+      "previous_sibling": "node_9_1626129695196"
+    },
+    {
+      "type": "standard",
+      "title": "t1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ابشر"
+              },
+              {
+                "text": "ان شاء الله"
+              },
+              {
+                "text": "تم"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_6_1625685120758",
+      "conditions": "#مكانالتدريب",
+      "dialog_node": "node_4_1625686331666"
+    },
+    {
+      "type": "standard",
+      "title": "t2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ابشر "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1626129695196",
+      "conditions": "#مكانالتدريب",
+      "dialog_node": "node_5_1626130424927"
+    },
+    {
+      "type": "standard",
+      "title": "يوميا",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "التدريب من الاحد الى الخميس"
+              },
+              {
+                "text": "التدريب لا يشمل الويكند "
+              },
+              {
+                "text": "التدريب لا يشمل عطلة نهاية الاسبوع"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "title": "هل تفضل التدرب في المقر أو عن بعد",
+            "options": [
+              {
+                "label": "في المقر",
+                "value": {
+                  "input": {
+                    "text": "في المقر"
+                  }
+                }
+              },
+              {
+                "label": "عن بعد",
+                "value": {
+                  "input": {
+                    "text": "عن بعد"
+                  }
+                }
+              }
+            ],
+            "description": "",
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#يوميا",
+      "dialog_node": "node_6_1625685120758",
+      "previous_sibling": "node_8_1625686070819"
+    },
+    {
+      "type": "standard",
+      "title": "التسجيل",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "للتسجيل عبر الرابط : https://s-m.com.sa/c13.html\n"
+              },
+              {
+                "text": "حياك الله التسجيل هنا : https://s-m.com.sa/c13.html\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#التسجيل",
+      "dialog_node": "node_6_1626129783185",
+      "previous_sibling": "node_6_1626130001712"
+    },
+    {
+      "type": "standard",
+      "title": "الشكر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "يا هلا"
+              },
+              {
+                "text": "شرفتنا "
+              },
+              {
+                "text": "حياك الله باي وقت"
+              },
+              {
+                "text": "نسعد انضمامك معانا"
+              },
+              {
+                "text": "العفو"
+              },
+              {
+                "text": "بالتوفيق"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#الشكر",
+      "dialog_node": "node_6_1626130001712",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "title": "ترحيب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "هلا والله "
+              },
+              {
+                "text": "يا هلا "
+              },
+              {
+                "text": "هلا وغلا"
+              },
+              {
+                "text": "اهلا اهلا"
+              },
+              {
+                "text": "اهلا وسهلا"
+              },
+              {
+                "text": "مرحبا"
+              },
+              {
+                "text": "مرحبا بكم "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_8_1625684105923",
+      "previous_sibling": "node_9_1625684269843"
+    },
+    {
+      "type": "standard",
+      "title": "مكان التدريب",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "تم"
+              },
+              {
+                "text": "ابشر "
+              },
+              {
+                "text": "ان شاء الله"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "",
+      "dialog_node": "node_8_1625686070819",
+      "previous_sibling": "node_6_1626129783185"
+    },
+    {
+      "type": "standard",
+      "title": "السلام",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "وعليكم السلام ورحمه الله وبركاته"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#السلام",
+      "dialog_node": "node_9_1625684269843",
+      "previous_sibling": "node_2_1625684511065"
+    },
+    {
+      "type": "standard",
+      "title": "مكان التدريب 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "يوجد تدريب عن بعد و التدريب التعاوني في المقر"
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "هل تفضل التدرب في المقر أو عن بعد",
+            "options": [
+              {
+                "label": "في المقر",
+                "value": {
+                  "input": {
+                    "text": "في المقر"
+                  }
+                }
+              },
+              {
+                "label": "عن بعد",
+                "value": {
+                  "input": {
+                    "text": "عن بعد"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#مكانالتدريب",
+      "dialog_node": "node_9_1626129695196",
+      "previous_sibling": "node_1_1625684754482"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "التدريب من الاحد الى الخميس"
+              },
+              {
+                "text": "التدريب لا يشمل الويكند "
+              },
+              {
+                "text": "التدريب لا يشمل عطلة نهاية الاسبوع"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "values": [
+              {
+                "text": " هل تريد التدرب في المقر أو عن بعد ؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1625685120758",
+      "disabled": true,
+      "dialog_node": "response_1_1625686294563",
+      "previous_sibling": "node_4_1625686331666"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_8_1625684105923",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مرحبا",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مرحبا بكم في الاساليب الذكية ، كيف يمكنني مساعدتك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "تحدث2",
+  "language": "ar",
+  "description": ""
+}
